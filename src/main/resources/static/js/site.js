@@ -1,26 +1,42 @@
-const users = [
-{
-    name: "John Doe",
-    gender: "Male",
-    image: "/img/img_avatar.png"
-},
-{
-    name: "Jane Doe",
-    gender: "Female",
-    image: "/img/img_avatar2.png"
-}
+var users = [
+    {
+        name: "John Doe",
+        gender: "Male",
+        img: "img/john.png"
+    },
+    {
+        name: "Jane Doe",
+        gender: "Female",
+        img: "img/jane.png"
+    }
 ];
 
-let current = 0;
+var currentUserIndex = 0;
 
-function toggle() {
-    current = (current + 1) % users.length;
+function showHome() {
+    document.getElementById("homeSection").style.display = "block";
+    document.getElementById("userSection").style.display = "none";
+    document.getElementById("toggleSection").style.display = "none";
+}
 
-    const u = users[current];
+function showCard() {
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("userSection").style.display = "block";
+    document.getElementById("toggleSection").style.display = "none";
+}
 
-    document.getElementById("userName").textContent = u.name;
+function showToggle() {
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("userSection").style.display = "none";
+    document.getElementById("toggleSection").style.display = "block";
+}
 
-    document.getElementById("userGender").textContent = u.gender;
+function toggleCard() {
+    currentUserIndex = (currentUserIndex + 1) % users.length;
 
-    document.getElementById("userImage").src = u.image;
+    var user = users[currentUserIndex];
+
+    document.getElementById("userImage").src = user.img;
+    document.getElementById("userName").innerHTML = user.name;
+    document.getElementById("userGender").innerHTML = user.gender;
 }
