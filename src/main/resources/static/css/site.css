@@ -14,16 +14,16 @@ body{
 }
 .navbar{
     border:1px solid #000000;
-    background-color: #22D3EE;
+    background-color: #32a2b3;
     padding: 10px;
 }
 .navbar a{
-    color: #fff;
+    color: #fffefe;
     text-decoration: none;
     margin: 0px 10px;
 
 }
 .navbar a:hover{
-   background-color: #fff;
+   background-color: #120c0c;
    padding:10px;
 }
